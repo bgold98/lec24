@@ -1,6 +1,4 @@
 from flask import Flask, render_template
-import requests
-import json
 import model
 
 app = Flask(__name__)
@@ -20,4 +18,5 @@ def bball():
     return render_template("seasons.html", seasons=model.get_bball_seasons())
 
 if __name__ == '__main__':
+    model.init_bball()
     app.run(debug=True)
